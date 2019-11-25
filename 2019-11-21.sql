@@ -61,4 +61,34 @@ OR mgr IS NULL;
 SELECT *
 FROM emp
 WHERE job = 'SALESMAN'
-AND hiredate >= TO_DATE('1981.6.1','YYYY.MM.DD');
+OR hiredate >= TO_DATE('1981.6.1','YYYY.MM.DD');
+
+SELECT *
+FROM emp
+WHERE job = 'SALESMAN'
+OR empno LIKE '78%';
+
+SELECT *
+FROM emp
+WHERE job = 'SALESMAN'
+OR empno Between 7800 AND 7899;
+
+--연산자 우선순위 AND > OR
+SELECT *
+FROM emp
+WHERE ename = 'SMITH'
+OR (ename = 'ALLEN' AND job = 'SALESMAN');
+
+SELECT *
+FROM emp
+WHERE (ename = 'SMITH' OR ename = 'ALLEN')
+AND job = 'SALESMAN';
+
+SELECT  *
+FROM emp
+WHERE job = 'SALESMAN'
+OR (empno LIKE '78%' AND hiredate >= TO_DATE('1981.06.01', 'YYYY.MM.DD'));
+
+
+
+
