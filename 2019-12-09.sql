@@ -1,4 +1,4 @@
--- PARIMARY KEY 제약 : YNIQUE + NOT NULL
+-- PARIMARY KEY 제약 : UNIQUE + NOT NULL
 
 UNIQUE : 해당 컬럼에 동일한 값이 중복될 수 없다.
         (EX : emp테이블의 empno(사번)
