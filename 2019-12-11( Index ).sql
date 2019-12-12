@@ -248,11 +248,6 @@ DROP INDEX idx_dept_test_02;
 DROP INDEX idx_dept_test_03;
 
 
--- 실습3. 인덱스를 사용하여 효율적인 SELECT 조회하기위한 인덱스 생성
-CREATE INDEX index ON emp_test (empno, sal, deptno);
-
--- 실습4. emp, dept 테이블에 필요하다고 생각되는 인덱스 생성
-
 
 
 
