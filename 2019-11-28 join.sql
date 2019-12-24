@@ -3,7 +3,7 @@ FROM emp, dept
 WHERE emp.deptno = dept.deptno
 AND emp.deptno = 10;
 
--- whereÏ†àÏù¥ Îã§Î•¥Îã§ÎùºÎäî Ï°∞Í±¥Ïù¥ÎØÄÎ°ú deptnoÍ∞Ä 20, 30, 40Ïóê Ìï¥ÎãπÌïòÎäî ÏÇ¨ÎûåÎì§Ïù¥ ÎÇòÏò§ÎäîÎç∞ empÌÖåÏù¥Î∏îÏùò deptnoÏùÑ Íµ¨ÌïòÎØÄÎ°ú deptnoÍ∞Ä 10ÏúºÎ°úÏ≤òÎ¶¨ÎêúÎã§.
+-- where¿˝¿Ã ¥Ÿ∏£¥Ÿ∂Û¥¬ ¡∂∞«¿Ãπ«∑Œ deptno∞° 20, 30, 40ø° «ÿ¥Á«œ¥¬ ªÁ∂˜µÈ¿Ã ≥™ø¿¥¬µ• emp≈◊¿Ã∫Ì¿« deptno¿ª ±∏«œπ«∑Œ deptno∞° 10¿∏∑Œ√≥∏Æµ»¥Ÿ.
 SELECT ename, emp.deptno, dept.dname
 FROM emp, dept
 WHERE emp.deptno != dept.deptno
@@ -11,19 +11,19 @@ AND emp.deptno = 10;
 
 
 
---natural Join : Ï°∞Ïù∏ ÌÖåÏù¥Î∏îÍ∞Ñ Í∞ôÏùÄ ÌÉÄÏûÖ, Í∞ôÏùÄ Ïù¥Î¶ÑÏùò Ïª¨ÎüºÏúºÎ°ú Í∞ôÏùÄ Í∞íÏùÑ Í∞ñÎäî Í≤ΩÏö∞ Ï°∞Ïù∏
--- Ï°∞Ïù∏Ïóê ÌôúÏö©ÎêòÎäî Ïª¨ÎüºÏùÄ ÌÖåÏù¥Î∏îÏùò ÏúÑÏπòÎ•º ÏïåÎ†§Ï§Ñ ÌïÑÏöîÍ∞Ä ÏóÜÎã§. 
+--natural Join : ¡∂¿Œ ≈◊¿Ã∫Ì∞£ ∞∞¿∫ ≈∏¿‘, ∞∞¿∫ ¿Ã∏ß¿« ƒ√∑≥¿∏∑Œ ∞∞¿∫ ∞™¿ª ∞Æ¥¬ ∞ÊøÏ ¡∂¿Œ
+-- ¡∂¿Œø° »∞øÎµ«¥¬ ƒ√∑≥¿∫ ≈◊¿Ã∫Ì¿« ¿ßƒ°∏¶ æÀ∑¡¡Ÿ « ø‰∞° æ¯¥Ÿ. 
 
--- AnSi SQL ÏÇ¨Ïö©Ïãú
+-- AnSi SQL ªÁøÎΩ√
 SELECT deptno, emp.empno, ename
 FROM emp NATURAL JOIN dept;
--- Oracle SQL ÏÇ¨Ïö©Ïãú
+-- Oracle SQL ªÁøÎΩ√
 SELECT e.deptno, e.empno, ename
 FROM emp e, dept d
 WHERE e.deptno = d.deptno;
 
 -- JOIN USING
--- JOINÌïòÎ†§Í≥† ÌïòÎäî ÌÖåÏù¥Î∏îÍ∞Ñ ÎèôÏùºÌïú Ïù¥Î¶ÑÏùò Ïª¨ÎüºÏù¥ ÎëêÍ∞ú Ïù¥ÏÉÅÏù∏ Í≤ΩÏö∞, JOIN Ïª¨ÎüºÏùÑ ÌïòÎÇòÎßå ÏÇ¨Ïö©ÌïòÍ≥† Ïã∂ÏùÑ Îïå
+-- JOIN«œ∑¡∞Ì «œ¥¬ ≈◊¿Ã∫Ì∞£ µø¿œ«— ¿Ã∏ß¿« ƒ√∑≥¿Ã µŒ∞≥ ¿ÃªÛ¿Œ ∞ÊøÏ, JOIN ƒ√∑≥¿ª «œ≥™∏∏ ªÁøÎ«œ∞Ì ΩÕ¿ª ∂ß
 
 -- AnSi SQL
 SELECT * 
@@ -35,8 +35,8 @@ FROM emp, dept
 WHERE emp.deptno = dept.deptno;
 
 --ANSI JOIN with ON
--- 1. Ï°∞Ïù∏ ÌïòÍ≥†Ïûê ÌïòÎäî ÌÖåÏù¥Î∏îÏùò Ïª¨Îüº Ïù¥Î¶ÑÏù¥ Îã§Î•º Îïå
--- 2. Í∞úÎ∞úÏûêÍ∞Ä Ï°∞Ïù∏Ï°∞Í±¥ÏùÑ ÏßÅÏ†ë Ï†úÏñ¥Ìï†Îïå
+-- 1. ¡∂¿Œ «œ∞Ì¿⁄ «œ¥¬ ≈◊¿Ã∫Ì¿« ƒ√∑≥ ¿Ã∏ß¿Ã ¥Ÿ∏¶ ∂ß
+-- 2. ∞≥πﬂ¿⁄∞° ¡∂¿Œ¡∂∞«¿ª ¡˜¡¢ ¡¶æÓ«“∂ß
 
 SELECT *
 FROM emp JOIN dept ON (emp.deptno = dept.deptno);
@@ -47,12 +47,12 @@ FROM emp, dept
 WHERE emp.deptno = dept.deptno;
 
 
--- Self JOIN : Í∞ôÏùÄ ÌÖåÏù¥Î∏îÍ∞Ñ Ï°∞Ïù∏
--- emp ÌÖåÏù¥Î∏îÍ∞Ñ Ï°∞Ïù∏ Ìï†ÎßåÌïú ÏÇ¨Ìï≠ : ÏßÅÏõêÏùò Í¥ÄÎ¶¨Ïûê Ï†ïÎ≥¥ Ï°∞Ìöå
--- Í≥ÑÏ∏µÍµ¨Ï°∞Í∞Ä Ï†ÅÏö©ÎêòÏñ¥ÏûàÏùå
+-- Self JOIN : ∞∞¿∫ ≈◊¿Ã∫Ì∞£ ¡∂¿Œ
+-- emp ≈◊¿Ã∫Ì∞£ ¡∂¿Œ «“∏∏«— ªÁ«◊ : ¡˜ø¯¿« ∞¸∏Æ¿⁄ ¡§∫∏ ¡∂»∏
+-- ∞Ë√˛±∏¡∂∞° ¿˚øÎµ«æÓ¿÷¿Ω
 
---ÏßÅÏõêÏùò Í¥ÄÎ¶¨Ïûê Ï†ïÎ≥¥Î•º Ï°∞Ìöå
--- ÏßÅÏõêÏù¥Î¶Ñ, Í¥ÄÎ¶¨ÏûêÏù¥Î¶Ñ
+--¡˜ø¯¿« ∞¸∏Æ¿⁄ ¡§∫∏∏¶ ¡∂»∏
+-- ¡˜ø¯¿Ã∏ß, ∞¸∏Æ¿⁄¿Ã∏ß
 
 -- ANSI
 SELECT e.ename, m.ename
@@ -63,7 +63,7 @@ SELECT e.ename, m.ename
 FROM emp e, emp m
 WHERE e.mgr = m.empno;
 
--- ÏßÅÏõê Ïù¥Î¶Ñ, ÏßÅÏõêÏùò ÏÉÅÍ∏âÏûê Ïù¥Î¶Ñ, ÏßÅÏõêÏùò ÏÉÅÍ∏âÏûêÏùò ÏÉÅÍ∏âÏûê Ïù¥Î¶Ñ
+-- ¡˜ø¯ ¿Ã∏ß, ¡˜ø¯¿« ªÛ±ﬁ¿⁄ ¿Ã∏ß, ¡˜ø¯¿« ªÛ±ﬁ¿⁄¿« ªÛ±ﬁ¿⁄ ¿Ã∏ß
 SELECT e.ename, m.ename, t.ename
 FROM emp e, emp m, emp t
 WHERE e.mgr = m.empno
@@ -75,22 +75,22 @@ FROM emp t, (SELECT e.ename AS e_ename, m.ename AS m_ename, m.mgr AS m_mgr
             WHERE e.mgr = m.empno) sub
 WHERE t.empno = m_mgr;
 
--- ÏßÅÏõê Ïù¥Î¶Ñ, ÏßÅÏõêÏùò ÏÉÅÍ∏âÏûê Ïù¥Î¶Ñ, ÏßÅÏõêÏùò ÏÉÅÍ∏âÏûêÏùò ÏÉÅÍ∏âÏûê Ïù¥Î¶Ñ
+-- ¡˜ø¯ ¿Ã∏ß, ¡˜ø¯¿« ªÛ±ﬁ¿⁄ ¿Ã∏ß, ¡˜ø¯¿« ªÛ±ﬁ¿⁄¿« ªÛ±ﬁ¿⁄ ¿Ã∏ß
 SELECT e.ename, m.ename, m_up.ename, m_up2.ename
 FROM emp e, emp m, emp m_up, emp m_up2
 WHERE e.mgr = m.empno
 AND m.mgr = m_up.empno
 AND m_up.mgr = m_up2.empno;
 
--- Ïó¨Îü¨ ÌÖåÏù¥Î∏îÏùÑ ANSI JOINÏùÑ Ïù¥Ïö©Ìïú JOIN
+-- ø©∑Ø ≈◊¿Ã∫Ì¿ª ANSI JOIN¿ª ¿ÃøÎ«— JOIN
 SELECT e.ename, m.ename, t.ename
 FROM emp e JOIN emp m ON (e.mgr = m.empno)
     JOIN emp t ON (m.mgr = t.empno)
     JOIN emp k ON (t.mgr = k.empno);
 
 
--- ÏßÅÏõêÏùò Ïù¥Î¶ÑÍ≥º, Ìï¥Îãπ ÏßÅÏõêÏùò ÏÉÅÏÇ¨ Ïù¥Î¶ÑÏùÑ Ï°∞Ìöå.
--- Îã®, ÏßÅÏõêÏùò ÏÇ¨Î≤àÏù¥ 7369~7698Ïù∏ ÏßÅÏõêÏùÑ ÎåÄÏÉÅÏúºÎ°ú
+-- ¡˜ø¯¿« ¿Ã∏ß∞˙, «ÿ¥Á ¡˜ø¯¿« ªÛªÁ ¿Ã∏ß¿ª ¡∂»∏.
+-- ¥‹, ¡˜ø¯¿« ªÁπ¯¿Ã 7369~7698¿Œ ¡˜ø¯¿ª ¥ÎªÛ¿∏∑Œ
 SELECT e.ename, m.ename
 FROM emp e, emp m
 WHERE e.mgr = m.empno
@@ -100,7 +100,7 @@ SELECT e.ename, m.ename
 FROM emp e JOIN emp m ON (e.mgr = m.empno)
 WHERE e.empno BETWEEN 7369 AND 7698;
 
---NON-EQUI JOIN : Ï°∞Ïù∏ Ï°∞Í±¥Ïù¥ =(equal)Ïù¥ ÏïÑÎãå JOIN
+--NON-EQUI JOIN : ¡∂¿Œ ¡∂∞«¿Ã =(equal)¿Ã æ∆¥— JOIN
 -- != , BETWEEN AND
 
 SELECT *
@@ -115,7 +115,7 @@ FROM emp e, salgrade sal_g
 WHERE e.sal BETWEEN sal_g.losal AND sal_g.hisal;
 
 
---Ïã§Ïäµ0 JOIN
+--Ω«Ω¿0 JOIN
 -- Oracle SQL
 SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e, dept d
@@ -126,7 +126,7 @@ ORDER BY e.deptno;
 SELECT empno, ename, e.deptno, d.dname
 FROM emp e JOIN dept d ON (e.deptno = d.deptno);
 
--- Ïã§Ïäµ1. JOIN
+-- Ω«Ω¿1. JOIN
 -- Oracle SQL
 SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e, dept d
@@ -138,7 +138,7 @@ SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e JOIN dept d ON (e.deptno = d.deptno)
 WHERE e.deptno IN (10, 30);
 
--- Ïã§Ïäµ2. JOIN
+-- Ω«Ω¿2. JOIN
 -- Oracle SQL
 SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e, dept d
@@ -150,7 +150,7 @@ SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e JOIN dept d ON (e.deptno = d.deptno)
 WHERE e.sal > 2500;
 
--- Ïã§Ïäµ3. JOIN
+-- Ω«Ω¿3. JOIN
 -- Oracle SQL
 SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e, dept d
@@ -164,7 +164,7 @@ FROM emp e JOIN dept d ON (e.deptno = d.deptno)
 WHERE e.sal > 2500 
 AND e.empno > 7600;
 
--- Ïã§Ïäµ4. JOIN
+-- Ω«Ω¿4. JOIN
 -- Oracle SQL
 SELECT e.empno, e.ename, e.deptno, d.dname
 FROM emp e, dept d
@@ -179,102 +179,13 @@ WHERE e.sal > 2500
 AND e.empno > 7600
 AND d.dname = 'RESEARCH';
 
--- Ïã§Ïäµ. JOIN _ 1
-SELECT *
-FROM prod;
-SELECT *
-FROM lprod;
+-- Ω«Ω¿6. JOIN
 
-SELECT lp.lprod_gu, lp.lprod_nm, p.prod_id, p.prod_name
-FROM prod p, lprod lp
-WHERE prod_lgu = lp.lprod_gu;
+-- Ω«Ω¿7. JOIN
 
-SELECT lp.lprod_gu, lp.lprod_nm, p.prod_id, p.prod_name
-FROM prod p JOIN lprod lp ON (p.prod_lgu = lp.lprod_gu);
+-- Ω«Ω¿8. JOIN
 
--- Ïã§Ïäµ. JOIN _ 2
-SELECT b.buyer_id, b.buyer_name, p.prod_id, p.prod_name
-FROM prod p, buyer b
-WHERE p.prod_buyer = b.buyer_id;
+-- Ω«Ω¿9. JOIN
 
-SELECT b.buyer_id, b.buyer_name, p.prod_id, p.prod_name
-FROM prod p JOIN buyer b ON (p.prod_buyer = b.buyer_id);
-
--- Ïã§Ïäµ. JOIN _ 3
-SELECT m.mem_id, m.mem_name, p.prod_id, p.prod_name, c.cart_qty
-FROM prod p, cart c, member m
-WHERE p.prod_id = c.cart_prod 
-AND m.mem_id = c.cart_member;
-
-SELECT m.mem_id, m.mem_name, p.prod_id, p.prod_name, c.cart_qty
-FROM prod p JOIN cart c ON (p.prod_id = c.cart_prod) JOIN member m ON (c.cart_member = m.mem_id);
-
--- Ïã§Ïäµ. JOIN _ 4
-
-SELECT cust.cid, cust.cnm, cyc.pid, cyc.day, cyc.cnt
-FROM customer cust, cycle cyc
-WHERE cyc.cid = cust.CID
-AND (cust.cnm = 'brown'
-OR cust.cnm = 'sally');
-
-SELECT cust.cid, cust.cnm, cyc.pid, cyc.day, cyc.cnt
-FROM customer cust JOIN cycle cyc ON (cyc.cid = cust.cid)
-WHERE cust.cnm = 'brown'
-OR cust.cnm = 'sally';
-
--- Ïã§Ïäµ. JOIN _ 5
-SELECT cust.cid, cust.cnm, pro.pnm, cyc.day, cyc.cnt
-FROM customer cust, cycle cyc, product pro
-WHERE cyc.cid = cust.CID
-AND cyc.pid = pro.pid
-AND (cust.cnm = 'brown'
-OR cust.cnm = 'sally');
-
-SELECT cust.cid, cust.cnm, pro.pnm, cyc.day, cyc.cnt
-FROM customer cust JOIN cycle cyc ON (cyc.cid = cust.CID) JOIN product pro ON (cyc.pid = pro.pid)
-WHERE cust.cnm = 'brown'
-OR cust.cnm = 'sally';
-
--- Ïã§Ïäµ. JOIN _ 6
-SELECT cust.cid, cust.cnm, cyc.pid , pro.pnm, SUM(cyc.cnt) AS cnt
-FROM customer cust, cycle cyc, product pro
-WHERE cyc.cid = cust.cid
-AND cyc.pid = pro.pid
-GROUP BY cust.cid, cust.cnm, cyc.pid, pro.pnm;
-
-SELECT cust.cid, cust.cnm, cyc.pid, pro.pnm, SUM(cyc.cnt) AS cnt
-FROM customer cust JOIN cycle cyc ON (cust.cid = cyc.cid) JOIN product pro ON(cyc.pid = pro.pid)
-group by cust.cid, cust.cnm, cyc.pid, pro.pnm;
-
--- Ï∂îÍ∞Ä : ÏÑúÎ∏åÏøºÎ¶¨Î•º ÌÜµÌï¥ ÌïòÎÇòÏùò ÌÖåÏù¥Î∏îÏ≤òÎüº ÎßåÎì§Ïñ¥ÏÑú Ï≤ò„Ö£
-SELECT a.cid, customer.cnm, a.pid, product.pnm, a.cnt
-FROM(SELECT  cid, pid, SUM(cnt) AS cnt
-    FROM cycle
-    GROUP BY cid, pid) a, customer, product
-WHERE a.cid = customer.cid
-AND a.pid = product.pid;
-
--- Ïã§Ïäµ. JOIN _ 7
-SELECT cyc.pid, pro.pnm, SUM(cyc.cnt) AS cnt
-FROM cycle cyc, product pro
-WHERE pro.pid = cyc.pid
-GROUP BY cyc.pid, pro.pnm;
-
-SELECT cyc.pid, pro.pnm, SUM(cyc.cnt) AS cnt
-FROM cycle cyc JOIN product pro ON (pro.pid = cyc.pid)
-GROUP BY cyc.pid, pro.pnm;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- Ω«Ω¿10. JOIN
 
